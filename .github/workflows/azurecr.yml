@@ -27,6 +27,10 @@ jobs:
             login-server: wechuli.azurecr.io
             username: ${{ secrets.ACR_USERNAME }}
             password: ${{ secrets.ACR_PASSWORD }}
+       - name: LoginLogout
+         run: |
+           docker logout wechuli.azurecr.io
+           docker login wechuli.azurecr.io
 
        - run: |
           docker pull wechuli.azurecr.io/hello-world:v1
