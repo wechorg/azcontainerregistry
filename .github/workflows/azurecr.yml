@@ -28,8 +28,8 @@ jobs:
             username: ${{ secrets.ACR_USERNAME }}
             password: ${{ secrets.ACR_PASSWORD }}
             
-       - name: Check Az login
-         run: az acr list -o table
+#        - name: Check Az login
+#          run: az acr list -o table
 
        - run: |
           docker pull wechuli.azurecr.io/hello-world:v1
