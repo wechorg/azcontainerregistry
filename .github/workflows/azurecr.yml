@@ -30,4 +30,11 @@ jobs:
 
        - run: |
           docker pull wechuli.azurecr.io/hello-world:v1
+       - name: push image without rights
+         run: |
+           docker pull mcr.microsoft.com/hello-world
+           docker tag mcr.microsoft.com/hello-world wechuli.azurecr.io/hello-worlds:v2
+           docker push wechuli.azurecr.io/hello-worlds:v2
+           
+           
         
